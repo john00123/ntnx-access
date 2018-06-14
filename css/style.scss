@@ -6,23 +6,43 @@
 html {
   @include font;
   background-color: $light-grey-3;
-  overflow-x: hidden;
   @include size(100%, 100%);
-  box-sizing: content-box;
+    overflow-x: hidden;
 }
 
 body {
   @include size(100%, 100%);
-  overflow: hidden;
-  box-sizing: content-box;
+  padding: 20px;
+    overflow-x: hidden;
 }
 
+.container{
+  overflow-x: hidden;
+}
 
+code{
+  @include secondary-alt();
+  border-radius: 4pc;
+  padding: 5px 15px;
+  margin-right: 10px;
+}
+.selected{
+  background-color:$background-color-1;
+  color:white;
+}
+
+.h1{
+  margin-bottom: 40px;
+}
 h1{
   font:$h1;
   font-size: 42px;
-  margin-bottom: 20px;
-  color: $font-color-3;
+  margin-top: 80px;
+  margin-bottom: 10px;
+  line-height: 1.15;
+  color: $font-color-1;
+  font-weight: 500;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 h3{
@@ -30,6 +50,8 @@ h3{
   color: $font-color-2;
   margin-bottom: 18px;
   position: relative;
+  font-size: 1em;
+  opacity: 0.8;
 
 }
 
@@ -43,12 +65,17 @@ h3{
 p{
   font: $p;
   color: $font-color-2;
-  text-align: center;
+  text-align: left;
   margin-bottom: 15px;
+  font-size: 1.1rem;
 }
 
 p a{ @include link;}
 
+
+h2{font:$h2; margin-bottom:15px;
+font-size: 1.5em;
+}
 
 
 h4{
@@ -73,54 +100,31 @@ span{
   display: block;
 }
 
-header {
-  @include size(60px, 100%);
-  @include padding();
-  @include flex(center, space-between, '');
-  background-color: $background-color-1;
-  color: transparent;
+
+
+.card{
+  @include size(auto, 100%);
+  border-radius: 10px;
+  @include shadow();
+  background-color: white;
+  padding: 50px 30px;
+  margin-bottom: 20px;
 }
 
-
+.dark{
+  color:white;
+  margin-top: 80px;
+  > * { color:white}
+  background: url('../img/framer.png');
+  background-size: cover;
+}
 .logo{
-  position: absolute;
-  bottom: 100px;
 }
 
 .primary{
   @include primary;
 }
 
-
-//container
-.container {
-  @include size(calc(100% - 60px), calc(400px - 40px));
-  @include flex(center, center, column);
-  max-width: 1280px;
-  margin: 50px auto;
-  overflow-x: hidden;
-    box-sizing: content-box;
-}
-
-//actions
-.actions {
-  @include flex(center, flex-start, row);
-  @include size(auto, 100%);
-
-  .primary {
-    @include primary;
-    margin-right: 10px;
-  }
-
-  .secondary {
-    @include secondary-alt;
-    margin-bottom: 0;
-  }
-}
-
-
-
-.link{
-  @include link;
-  text-decoration-color: $dark-blue-1;
+.secondary{
+  @include secondary;
 }
